@@ -5,7 +5,11 @@ const router = require('express').Router()
 const clienteController = require('../controllers/cliente')
 
 //CRUD
+
 //Create
+router.post('/ordenar',clienteController.postAgregarOrden)
 router.get('/obtenerplatillos',clienteController.getObtenerPlatillos)
+router.post('/cambiarorden',clienteController.postActualizarOrden)
+router.post('/borrarorden',clienteController.postBorrarOrden)
 
 module.exports=router
