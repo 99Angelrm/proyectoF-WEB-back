@@ -31,7 +31,7 @@ exports.getObtenerOrden = async (req, res) => {
 exports.postActualizarPlato = async(req,res)=>{
     //Filtro y cambio
     try{
-        await Plato.findOneAndUpdate(req.body.titulo,req.body.ingredientes)
+        await Plato.findOneAndUpdate({title:req.body.title},{ingredientes:req.body.ingredientes})
         console.log("Cambio realizado")
         res.json({operacion: "correcta"})
     }catch(err){
@@ -42,7 +42,7 @@ exports.postActualizarPlato = async(req,res)=>{
 
 //DELETE PLATO
 exports.postBorrarPlato = async (req,res)=>{
-    await Plato.findByIdAndRemove(req.body)
+    await Plato.findOneAndRemove(req.body)
     console.log("Platillo eliminada")
     res.json({operacion: "correcta"})
 }
