@@ -47,4 +47,8 @@ exports.postBorrarOrden = async (req,res)=>{
     res.json({operacion: "correcta"})
 }
 
+exports.borrar = async(req,res)=>{
+    await Orden.remove()
+    res.json({operacion: "correcta"})
+}
 

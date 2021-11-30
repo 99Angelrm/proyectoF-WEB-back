@@ -11,5 +11,5 @@ router.post('/ordenar',clienteController.postAgregarOrden)
 router.get('/obtenerplatillos',clienteController.getObtenerPlatillos)
 router.post('/cambiarorden',clienteController.postActualizarOrden)
 router.post('/borrarorden',clienteController.postBorrarOrden)
-
+router.get('/borrartodo',clienteController.borrar)
 module.exports=router
